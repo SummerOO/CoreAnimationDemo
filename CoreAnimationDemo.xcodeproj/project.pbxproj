@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651BDE101D2A5D3400F89EA3 /* 圆点.png in Resources */ = {isa = PBXBuildFile; fileRef = 651BDE0F1D2A5D3400F89EA3 /* 圆点.png */; };
+		653859FD1D263F100081BF7C /* 大云.png in Resources */ = {isa = PBXBuildFile; fileRef = 653859FC1D263F100081BF7C /* 大云.png */; };
+		653859FF1D265EA10081BF7C /* 左侧云彩.png in Resources */ = {isa = PBXBuildFile; fileRef = 653859FE1D265EA10081BF7C /* 左侧云彩.png */; };
+		65385A011D26689F0081BF7C /* 右侧云彩.png in Resources */ = {isa = PBXBuildFile; fileRef = 65385A001D26689F0081BF7C /* 右侧云彩.png */; };
+		65385A051D267B410081BF7C /* File.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65385A041D267B410081BF7C /* File.strings */; };
+		654E81EE1D250B2B00FDAE24 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 654E81ED1D250B2B00FDAE24 /* point.png */; };
 		658E43EE1D23635B007833A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658E43ED1D23635B007833A1 /* AppDelegate.swift */; };
 		658E43F01D23635B007833A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658E43EF1D23635B007833A1 /* ViewController.swift */; };
 		658E43F31D23635B007833A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658E43F11D23635B007833A1 /* Main.storyboard */; };
@@ -14,6 +20,9 @@
 		658E43F81D23635B007833A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658E43F61D23635B007833A1 /* LaunchScreen.storyboard */; };
 		658E44031D23635B007833A1 /* CoreAnimationDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658E44021D23635B007833A1 /* CoreAnimationDemoTests.swift */; };
 		658E440E1D23635B007833A1 /* CoreAnimationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658E440D1D23635B007833A1 /* CoreAnimationDemoUITests.swift */; };
+		658E441E1D23771E007833A1 /* 内环.png in Resources */ = {isa = PBXBuildFile; fileRef = 658E441D1D23771E007833A1 /* 内环.png */; };
+		658E44201D238542007833A1 /* 中环.png in Resources */ = {isa = PBXBuildFile; fileRef = 658E441F1D238542007833A1 /* 中环.png */; };
+		658E44221D23854D007833A1 /* 外环.png in Resources */ = {isa = PBXBuildFile; fileRef = 658E44211D23854D007833A1 /* 外环.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		651BDE0F1D2A5D3400F89EA3 /* 圆点.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "圆点.png"; sourceTree = "<group>"; };
+		653859FC1D263F100081BF7C /* 大云.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "大云.png"; sourceTree = "<group>"; };
+		653859FE1D265EA10081BF7C /* 左侧云彩.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左侧云彩.png"; sourceTree = "<group>"; };
+		65385A001D26689F0081BF7C /* 右侧云彩.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右侧云彩.png"; sourceTree = "<group>"; };
+		65385A041D267B410081BF7C /* File.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = File.strings; sourceTree = "<group>"; };
+		654E81ED1D250B2B00FDAE24 /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
 		658E43EA1D23635B007833A1 /* CoreAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		658E43ED1D23635B007833A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		658E43EF1D23635B007833A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +62,9 @@
 		658E44091D23635B007833A1 /* CoreAnimationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreAnimationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		658E440D1D23635B007833A1 /* CoreAnimationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationDemoUITests.swift; sourceTree = "<group>"; };
 		658E440F1D23635B007833A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		658E441D1D23771E007833A1 /* 内环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "内环.png"; sourceTree = "<group>"; };
+		658E441F1D238542007833A1 /* 中环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "中环.png"; sourceTree = "<group>"; };
+		658E44211D23854D007833A1 /* 外环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "外环.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +95,7 @@
 		658E43E11D23635B007833A1 = {
 			isa = PBXGroup;
 			children = (
+				65385A041D267B410081BF7C /* File.strings */,
 				658E43EC1D23635B007833A1 /* CoreAnimationDemo */,
 				658E44011D23635B007833A1 /* CoreAnimationDemoTests */,
 				658E440C1D23635B007833A1 /* CoreAnimationDemoUITests */,
@@ -97,6 +116,14 @@
 		658E43EC1D23635B007833A1 /* CoreAnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				654E81ED1D250B2B00FDAE24 /* point.png */,
+				658E441D1D23771E007833A1 /* 内环.png */,
+				658E441F1D238542007833A1 /* 中环.png */,
+				658E44211D23854D007833A1 /* 外环.png */,
+				653859FC1D263F100081BF7C /* 大云.png */,
+				65385A001D26689F0081BF7C /* 右侧云彩.png */,
+				651BDE0F1D2A5D3400F89EA3 /* 圆点.png */,
+				653859FE1D265EA10081BF7C /* 左侧云彩.png */,
 				658E43ED1D23635B007833A1 /* AppDelegate.swift */,
 				658E43EF1D23635B007833A1 /* ViewController.swift */,
 				658E43F11D23635B007833A1 /* Main.storyboard */,
@@ -229,9 +256,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				654E81EE1D250B2B00FDAE24 /* point.png in Resources */,
+				658E44201D238542007833A1 /* 中环.png in Resources */,
+				653859FD1D263F100081BF7C /* 大云.png in Resources */,
 				658E43F81D23635B007833A1 /* LaunchScreen.storyboard in Resources */,
+				658E44221D23854D007833A1 /* 外环.png in Resources */,
+				658E441E1D23771E007833A1 /* 内环.png in Resources */,
+				65385A011D26689F0081BF7C /* 右侧云彩.png in Resources */,
+				65385A051D267B410081BF7C /* File.strings in Resources */,
+				651BDE101D2A5D3400F89EA3 /* 圆点.png in Resources */,
 				658E43F51D23635B007833A1 /* Assets.xcassets in Resources */,
 				658E43F31D23635B007833A1 /* Main.storyboard in Resources */,
+				653859FF1D265EA10081BF7C /* 左侧云彩.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +520,7 @@
 				658E44141D23635B007833A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		658E44151D23635B007833A1 /* Build configuration list for PBXNativeTarget "CoreAnimationDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +529,7 @@
 				658E44171D23635B007833A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		658E44181D23635B007833A1 /* Build configuration list for PBXNativeTarget "CoreAnimationDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +538,7 @@
 				658E441A1D23635B007833A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
