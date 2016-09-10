@@ -33,8 +33,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
 }
 
 
@@ -268,37 +266,6 @@ extension ViewController {
             
         }
 
-        
-        
-        
-//        // 下雨暂时考虑动画
-//        let pointCell = CAEmitterCell()
-//        pointCell.name = "point"
-//        pointCell.birthRate = 2.0
-//        pointCell.lifetime = 10.0
-//        pointCell.velocity = 20.0
-//        pointCell.velocityRange = 10
-//        pointCell.yAcceleration = 2
-//        pointCell.alphaSpeed = 10
-//        pointCell.minificationFilterBias = 5.0
-//        //        pointCell.duration = 10.0
-//        pointCell.emissionRange = CGFloat(0.75 * M_PI)
-//        pointCell.spinRange = CGFloat(0.25 * M_PI)
-//        
-//        
-//        pointCell.contents = UIImage(named: "point")!.CGImage
-//        //        pointCell.color = UIColor.init(red: 200, green: 258, blue: 543, alpha: 1.0).CGColor
-//        
-//        //        pointEmitter.shadowOpacity = 1.0
-//        pointEmitter.cornerRadius = 50.0
-//        //        pointCell.enabled = false
-//        //        pointEmitter.shadowOffset = CGSizeMake(0.0, 1.0)
-//        //        pointEmitter.shadowColor = UIColor.redColor().CGColor
-//        pointEmitter.emitterCells = [pointCell]
-//        
-//        self.view.layer.insertSublayer(pointEmitter, atIndex: 0)
-        
-        //        pointCell.kCAEmitterLayerOldestLast
 
     }
     
@@ -306,61 +273,42 @@ extension ViewController {
      cloudy
      */
     func cloudy() {
-//        viewAnimation.layer.position = CGPointMake(10, -10)
-//        viewAnimation.layer.bounds = CGRectMake(0, 0, 300, 156)
-//        viewAnimation.backgroundColor = UIColor.init(patternImage: UIImage(named: "大云")!)
-//        self.view.addSubview(viewAnimation)
-//        
-//        let anim = CABasicAnimation(keyPath: "position")
-//        anim.duration = 2
-//        let fromV = NSValue(CGPoint: CGPointMake(50, 80))
-//        anim.fromValue = fromV
-//        let toV = NSValue(CGPoint: CGPointMake(200, 80))
-//        anim.toValue = toV
-//        anim.delegate = self
-//        anim.removedOnCompletion = false
-//        anim.fillMode = kCAFillModeForwards
-//        viewAnimation.layer.addAnimation(anim, forKey: "translate")
-        
-        //创建方块
+        // 创建云块
         viewAnimation.layer.position = CGPointMake(100, -10)
-        viewAnimation.layer.bounds = CGRectMake(0, 0, 300, 156)
+        viewAnimation.layer.bounds = CGRectMake(0, 0, 279, 145)
         viewAnimation.backgroundColor = UIColor.init(patternImage: UIImage(named: "大云")!)
         self.view.addSubview(viewAnimation)
         
         leftCloudy.layer.position = CGPointMake(150, 80)
-        leftCloudy.layer.bounds = CGRectMake(0, 0, 60, 33)
+        leftCloudy.layer.bounds = CGRectMake(0, 0, 61, 33)
         leftCloudy.backgroundColor = UIColor.init(patternImage: UIImage(named: "左侧云彩")!)
         self.view.addSubview(leftCloudy)
         
         rightCloudy.layer.position = CGPointMake(300, 30)
-        rightCloudy.layer.bounds = CGRectMake(0, 0, 40, 22)
+        rightCloudy.layer.bounds = CGRectMake(0, 0, 33, 19)
         rightCloudy.backgroundColor = UIColor.init(patternImage: UIImage(named: "右侧云彩")!)
         self.view.addSubview(rightCloudy)
         
-        
-        point.layer.position = CGPointMake(self.view.frame.width * 0.5, 150)
-        point.layer.bounds = CGRectMake(0, 0, 10, 10)
+        point.layer.position = CGPointMake(self.view.frame.width * 0.5, 100)
+        point.layer.bounds = CGRectMake(0, 0, 9, 9)
         point.backgroundColor = UIColor.init(patternImage: UIImage(named: "圆点")!)
         self.view.addSubview(point)
-
-        point1.layer.position = CGPointMake(self.view.frame.width * 0.5, 150)
-        point1.layer.bounds = CGRectMake(0, 0, 10, 10)
+        
+        point1.layer.position = CGPointMake(self.view.frame.width * 0.5, 100)
+        point1.layer.bounds = CGRectMake(0, 0, 9, 9)
         point1.backgroundColor = UIColor.init(patternImage: UIImage(named: "圆点")!)
         self.view.addSubview(point1)
-
-        point2.layer.position = CGPointMake(self.view.frame.width * 0.5, 150)
-        point2.layer.bounds = CGRectMake(0, 0, 10, 10)
+        
+        point2.layer.position = CGPointMake(self.view.frame.width * 0.5, 100)
+        point2.layer.bounds = CGRectMake(0, 0, 9, 9)
         point2.backgroundColor = UIColor.init(patternImage: UIImage(named: "圆点")!)
         self.view.addSubview(point2)
-
-        point3.layer.position = CGPointMake(self.view.frame.width * 0.5, 150)
-        point3.layer.bounds = CGRectMake(0, 0, 10, 10)
+        
+        point3.layer.position = CGPointMake(self.view.frame.width * 0.5, 100)
+        point3.layer.bounds = CGRectMake(0, 0, 9, 9)
         point3.backgroundColor = UIColor.init(patternImage: UIImage(named: "圆点")!)
         self.view.addSubview(point3)
 
-
-        
         //播放动画
         playAnimation()
         
@@ -490,13 +438,10 @@ extension ViewController {
     func snow() {
         let pointEmitter = CAEmitterLayer()
         pointEmitter.emitterPosition = CGPointMake(120, -120)
-        
-        
-        pointEmitter.emitterSize = CGSizeMake(self.view.frame.width, 0)
+                pointEmitter.emitterSize = CGSizeMake(self.view.frame.width, 0)
         pointEmitter.emitterMode = kCAEmitterLayerSurface
         pointEmitter.emitterShape = kCAEmitterLayerOldestLast
         
-        // 下雨暂时考虑动画
         let snow1Cell = CAEmitterCell()
         snow1Cell.name = "point"
         snow1Cell.birthRate = 1
@@ -548,7 +493,7 @@ extension ViewController {
         snow4Cell.emissionRange = CGFloat(M_PI)
         snow4Cell.spinRange = CGFloat(M_PI)
         snow4Cell.contents = UIImage(named: "snow4")!.CGImage
-
+        
         pointEmitter.emitterCells = [snow1Cell,snow2Cell,snow3Cell,snow4Cell]
         
         self.view.layer.insertSublayer(pointEmitter, atIndex: 0)
@@ -562,79 +507,75 @@ extension ViewController {
     //rainy
     func rain() {
         let rainEmitter = CAEmitterLayer()
-        rainEmitter.emitterPosition = CGPointMake(self.view.frame.width + 200, -110)
+        rainEmitter.emitterPosition = CGPointMake(self.view.frame.width, -100)
         rainEmitter.emitterSize = CGSizeMake(10, 10)
         rainEmitter.emitterMode = kCAEmitterLayerSurface
         rainEmitter.emitterShape = kCAEmitterLayerOldestLast
-
+        
         
         let rain1Cell = CAEmitterCell()
         rain1Cell.name = "point"
-        rain1Cell.birthRate = 2
-        rain1Cell.lifetime = 1
-        rain1Cell.velocity = 100.0
+        rain1Cell.birthRate = 0.7
+        rain1Cell.lifetime = 2.0
+        rain1Cell.velocity = 50.0
         rain1Cell.velocityRange = 40
-        rain1Cell.xAcceleration = -100
-        rain1Cell.yAcceleration = 350
+        rain1Cell.xAcceleration = -50
+        rain1Cell.yAcceleration = 100
         rain1Cell.alphaSpeed = 2
         rain1Cell.emissionLatitude = CGFloat(-3 * M_PI)
         rain1Cell.contents = UIImage(named: "rain")!.CGImage
         
         let rain2Cell = CAEmitterCell()
         rain2Cell.name = "point"
-        rain2Cell.birthRate = 2
-        rain2Cell.lifetime = 1
-        rain2Cell.velocity = 200.0
+        rain2Cell.birthRate = 0.78
+        rain2Cell.lifetime = 2.0
+        rain2Cell.velocity = 10.0
         rain2Cell.velocityRange = 40
-        rain2Cell.xAcceleration = -100
-        rain2Cell.yAcceleration = 350
+        rain2Cell.xAcceleration = -50
+        rain2Cell.yAcceleration = 100
         rain2Cell.alphaSpeed = 2
         rain2Cell.emissionLatitude = CGFloat(-3 * M_PI)
         rain2Cell.contents = UIImage(named: "rain2")!.CGImage
-
+        
         
         let rain3Cell = CAEmitterCell()
         rain3Cell.name = "point"
         rain3Cell.beginTime = 3.0
-        rain3Cell.birthRate = 4
-        rain3Cell.lifetime = 1
-        rain3Cell.velocity = 300.0
+        rain3Cell.birthRate = 0.5
+        rain3Cell.lifetime = 2.0
+        rain3Cell.velocity = 80.0
         rain3Cell.velocityRange = 40
-        rain3Cell.xAcceleration = -100
-        rain3Cell.yAcceleration = 350
+        rain3Cell.xAcceleration = -50
+        rain3Cell.yAcceleration = 100
         rain3Cell.alphaSpeed = 2
         rain3Cell.emissionLatitude = CGFloat(-3 * M_PI)
         rain3Cell.contents = UIImage(named: "rain3")!.CGImage
-
+        
         
         let rain4Cell = CAEmitterCell()
         rain4Cell.name = "point"
-        rain4Cell.birthRate = 5
-        rain4Cell.lifetime = 1
-        rain4Cell.velocity = 400.0
+        rain4Cell.birthRate = 0.5
+        rain4Cell.lifetime = 2.0
+        rain4Cell.velocity = 90.0
         rain4Cell.velocityRange = 40
-        rain4Cell.xAcceleration = -100
-        rain4Cell.yAcceleration = 350
+        rain4Cell.xAcceleration = -50
+        rain4Cell.yAcceleration = 100
         rain4Cell.alphaSpeed = 2
         rain4Cell.emissionLatitude = CGFloat(-3 * M_PI)
         rain4Cell.contents = UIImage(named: "rain4")!.CGImage
-
+        
         
         let rain5Cell = CAEmitterCell()
         rain5Cell.name = "point"
-        rain5Cell.birthRate = 6
-        rain5Cell.lifetime = 1
-        rain5Cell.velocity = 500.0
+        rain5Cell.birthRate = 0.5
+        rain5Cell.lifetime = 2.0
+        rain5Cell.velocity = 60.0
         rain5Cell.velocityRange = 40
-        rain5Cell.xAcceleration = -100
-        rain5Cell.yAcceleration = 350
+        rain5Cell.xAcceleration = -50
+        rain5Cell.yAcceleration = 100
         rain5Cell.alphaSpeed = 2
         rain5Cell.emissionLatitude = CGFloat(-3 * M_PI)
         rain5Cell.contents = UIImage(named: "rain5")!.CGImage
-
-        
-
-        
         rainEmitter.emitterCells = [rain1Cell,rain2Cell,rain3Cell,rain4Cell,rain5Cell]
         self.view.layer.insertSublayer(rainEmitter, atIndex: 0)
     }
