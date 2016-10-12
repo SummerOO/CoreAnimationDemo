@@ -42,7 +42,7 @@ extension ViewController {
     // sun
     func sunny() {
         let imageLayer1 = CALayer()
-        imageLayer1.contents = UIImage(named: "内环")!.CGImage
+        imageLayer1.contents = UIImage(named: "内环")!.cgImage
         imageLayer1.frame = CGRect(x: 0, y: -self.view.frame.width * 0.90, width: self.view.frame.width, height: self.view.frame.width)
         view.layer.insertSublayer(imageLayer1, above: view.layer)
         let anim1 = CAKeyframeAnimation(keyPath: "transform.rotation")
@@ -51,12 +51,12 @@ extension ViewController {
         anim1.values = [CGPoint(x: -100.0, y: 0.0),
             CGPoint(x: view.frame.width + 120.0, y: 100.0),
             CGPoint(x: -100.0, y: 0)]
-            .map{NSValue(CGPoint: $0)}
+            .map{NSValue(cgPoint: $0)}
         anim1.keyTimes = [0.0, 50.0]
-        imageLayer1.addAnimation(anim1, forKey: nil)
+        imageLayer1.add(anim1, forKey: nil)
         
         let imageLayer2 = CALayer()
-        imageLayer2.contents = UIImage(named: "中环")!.CGImage
+        imageLayer2.contents = UIImage(named: "中环")!.cgImage
         imageLayer2.frame = CGRect(x: 20, y: -self.view.frame.width * 0.85, width: self.view.frame.width, height: self.view.frame.width)
         view.layer.insertSublayer(imageLayer2, above: view.layer)
         let anim2 = CAKeyframeAnimation(keyPath: "transform.rotation")
@@ -65,12 +65,12 @@ extension ViewController {
         anim2.values = [CGPoint(x: 0.0, y: 0.0),
             CGPoint(x: -view.frame.width - 120.0, y: 100.0),
             CGPoint(x:  0.0, y: 0)]
-            .map{NSValue(CGPoint: $0)}
+            .map{NSValue(cgPoint: $0)}
         anim2.keyTimes = [0.0, 50.0]
-        imageLayer2.addAnimation(anim2, forKey: nil)
+        imageLayer2.add(anim2, forKey: nil)
         
         let imageLayer3 = CALayer()
-        imageLayer3.contents = UIImage(named: "外环")!.CGImage
+        imageLayer3.contents = UIImage(named: "外环")!.cgImage
         imageLayer3.frame = CGRect(x: 0, y: -self.view.frame.width * 0.80, width: self.view.frame.width, height: self.view.frame.width)
         view.layer.insertSublayer(imageLayer3, above: view.layer)
         let anim3 = CAKeyframeAnimation(keyPath: "transform.rotation")
@@ -79,34 +79,34 @@ extension ViewController {
         anim3.values = [CGPoint(x: -100.0, y: 0.0),
             CGPoint(x: view.frame.width + 120.0, y: 100.0),
             CGPoint(x: -100.0, y: 0)]
-            .map{NSValue(CGPoint: $0)}
+            .map{NSValue(cgPoint: $0)}
         anim3.keyTimes = [0.0, 50.0]
-        imageLayer3.addAnimation(anim3, forKey: nil)
+        imageLayer3.add(anim3, forKey: nil)
         
         let pointEmitter = CAEmitterLayer()
-        pointEmitter.emitterPosition = CGPointMake(120, -120)
+        pointEmitter.emitterPosition = CGPoint(x: 120, y: -120)
         
         
-        pointEmitter.emitterSize = CGSizeMake(20, 20)
+        pointEmitter.emitterSize = CGSize(width: 20, height: 20)
         pointEmitter.emitterMode = kCAEmitterLayerSurface
         pointEmitter.emitterShape = kCAEmitterLayerOldestLast
         //        pointEmitter.lifetime = 5
         
         
         let point1 = UIView()
-        point1.layer.position = CGPointMake(self.view.frame.width * 0.5, 210)
-        point1.layer.bounds = CGRectMake(0, 0, 5, 5)
+        point1.layer.position = CGPoint(x: self.view.frame.width * 0.5, y: 210)
+        point1.layer.bounds = CGRect(x: 0, y: 0, width: 5, height: 5)
         point1.backgroundColor = UIColor.init(patternImage: UIImage(named: "point")!)
         self.view.addSubview(point1)
         
         
-        UIView.animateWithDuration(5.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
             point1.frame.origin.x = self.view.frame.width * 0.5
             point1.frame.origin.y = 20
-            point1.center = CGPointMake(10, 70)
+            point1.center = CGPoint(x: 10, y: 70)
             
-            UIView.animateWithDuration(1.0, animations: {
-                point1.transform = CGAffineTransformTranslate(point1.transform, 0, 0)
+            UIView.animate(withDuration: 1.0, animations: {
+                point1.transform = point1.transform.translatedBy(x: 0, y: 0)
                 let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
                 scaleAnimation.fromValue = 1.5
                 scaleAnimation.toValue = 2.0
@@ -114,7 +114,7 @@ extension ViewController {
                 scaleAnimation.fillMode = kCAFillModeForwards
                 scaleAnimation.repeatCount = MAXFLOAT
                 scaleAnimation.duration = 0.8
-                point1.layer.addAnimation(scaleAnimation, forKey: "scaleAnimation")
+                point1.layer.add(scaleAnimation, forKey: "scaleAnimation")
             })
             
             
@@ -123,18 +123,18 @@ extension ViewController {
         }
         
         let point2 = UIView()
-        point2.layer.position = CGPointMake(self.view.frame.width * 0.5, 210)
-        point2.layer.bounds = CGRectMake(0, 0, 5, 5)
+        point2.layer.position = CGPoint(x: self.view.frame.width * 0.5, y: 210)
+        point2.layer.bounds = CGRect(x: 0, y: 0, width: 5, height: 5)
         point2.backgroundColor = UIColor.init(patternImage: UIImage(named: "point")!)
         self.view.addSubview(point2)
         
-        UIView.animateWithDuration(5.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
             point2.frame.origin.x = self.view.frame.width * 0.5
             point2.frame.origin.y = 20
-            point2.center = CGPointMake(80, 100)
+            point2.center = CGPoint(x: 80, y: 100)
             
-            UIView.animateWithDuration(1.0, animations: {
-                point2.transform = CGAffineTransformTranslate(point2.transform, 0, 0)
+            UIView.animate(withDuration: 1.0, animations: {
+                point2.transform = point2.transform.translatedBy(x: 0, y: 0)
                 let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
                 scaleAnimation.fromValue = 1.0
                 scaleAnimation.toValue = 1.5
@@ -142,7 +142,7 @@ extension ViewController {
                 scaleAnimation.fillMode = kCAFillModeForwards
                 scaleAnimation.repeatCount = MAXFLOAT
                 scaleAnimation.duration = 0.8
-                point2.layer.addAnimation(scaleAnimation, forKey: "scaleAnimation")
+                point2.layer.add(scaleAnimation, forKey: "scaleAnimation")
             })
             
             
@@ -151,19 +151,19 @@ extension ViewController {
         }
         
         let point3 = UIView()
-        point3.layer.position = CGPointMake(self.view.frame.width * 0.5, 210)
-        point3.layer.bounds = CGRectMake(0, 0, 5, 5)
+        point3.layer.position = CGPoint(x: self.view.frame.width * 0.5, y: 210)
+        point3.layer.bounds = CGRect(x: 0, y: 0, width: 5, height: 5)
         point3.backgroundColor = UIColor.init(patternImage: UIImage(named: "point")!)
         self.view.addSubview(point3)
         
         
-        UIView.animateWithDuration(5.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
             point3.frame.origin.x = self.view.frame.width * 0.5
             point3.frame.origin.y = 20
-            point3.center = CGPointMake(100, 50)
+            point3.center = CGPoint(x: 100, y: 50)
             
-            UIView.animateWithDuration(1.0, animations: {
-                point1.transform = CGAffineTransformTranslate(point3.transform, 0, 0)
+            UIView.animate(withDuration: 1.0, animations: {
+                point1.transform = point3.transform.translatedBy(x: 0, y: 0)
                 let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
                 scaleAnimation.fromValue = 0.7
                 scaleAnimation.toValue = 1.2
@@ -171,7 +171,7 @@ extension ViewController {
                 scaleAnimation.fillMode = kCAFillModeForwards
                 scaleAnimation.repeatCount = MAXFLOAT
                 scaleAnimation.duration = 0.8
-                point3.layer.addAnimation(scaleAnimation, forKey: "scaleAnimation")
+                point3.layer.add(scaleAnimation, forKey: "scaleAnimation")
             })
             
             
@@ -180,19 +180,19 @@ extension ViewController {
         }
         
         let point4 = UIView()
-        point4.layer.position = CGPointMake(self.view.frame.width * 0.5, 210)
-        point4.layer.bounds = CGRectMake(0, 0, 5, 5)
+        point4.layer.position = CGPoint(x: self.view.frame.width * 0.5, y: 210)
+        point4.layer.bounds = CGRect(x: 0, y: 0, width: 5, height: 5)
         point4.backgroundColor = UIColor.init(patternImage: UIImage(named: "point")!)
         self.view.addSubview(point4)
         
         
-        UIView.animateWithDuration(5.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
             point4.frame.origin.x = self.view.frame.width * 0.5
             point4.frame.origin.y = 20
-            point4.center = CGPointMake(self.view.frame.width - 10, 70)
+            point4.center = CGPoint(x: self.view.frame.width - 10, y: 70)
             
-            UIView.animateWithDuration(1.0, animations: {
-                point1.transform = CGAffineTransformTranslate(point4.transform, 0, 0)
+            UIView.animate(withDuration: 1.0, animations: {
+                point1.transform = point4.transform.translatedBy(x: 0, y: 0)
                 let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
                 scaleAnimation.fromValue = 1.5
                 scaleAnimation.toValue = 2.0
@@ -200,7 +200,7 @@ extension ViewController {
                 scaleAnimation.fillMode = kCAFillModeForwards
                 scaleAnimation.repeatCount = MAXFLOAT
                 scaleAnimation.duration = 0.8
-                point4.layer.addAnimation(scaleAnimation, forKey: "scaleAnimation")
+                point4.layer.add(scaleAnimation, forKey: "scaleAnimation")
             })
             
             
@@ -209,19 +209,19 @@ extension ViewController {
         }
 
         let point5 = UIView()
-        point5.layer.position = CGPointMake(self.view.frame.width * 0.5, 210)
-        point5.layer.bounds = CGRectMake(0, 0, 5, 5)
+        point5.layer.position = CGPoint(x: self.view.frame.width * 0.5, y: 210)
+        point5.layer.bounds = CGRect(x: 0, y: 0, width: 5, height: 5)
         point5.backgroundColor = UIColor.init(patternImage: UIImage(named: "point")!)
         self.view.addSubview(point5)
         
         
-        UIView.animateWithDuration(5.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
             point5.frame.origin.x = self.view.frame.width * 0.5
             point5.frame.origin.y = 20
-            point5.center = CGPointMake(self.view.frame.width - 80, 100)
+            point5.center = CGPoint(x: self.view.frame.width - 80, y: 100)
             
-            UIView.animateWithDuration(1.0, animations: {
-                point1.transform = CGAffineTransformTranslate(point5.transform, 0, 0)
+            UIView.animate(withDuration: 1.0, animations: {
+                point1.transform = point5.transform.translatedBy(x: 0, y: 0)
                 let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
                 scaleAnimation.fromValue = 1.0
                 scaleAnimation.toValue = 1.5
@@ -229,7 +229,7 @@ extension ViewController {
                 scaleAnimation.fillMode = kCAFillModeForwards
                 scaleAnimation.repeatCount = MAXFLOAT
                 scaleAnimation.duration = 0.8
-                point5.layer.addAnimation(scaleAnimation, forKey: "scaleAnimation")
+                point5.layer.add(scaleAnimation, forKey: "scaleAnimation")
             })
             
             
@@ -238,19 +238,19 @@ extension ViewController {
         }
 
         let point6 = UIView()
-        point6.layer.position = CGPointMake(self.view.frame.width * 0.5, 210)
-        point6.layer.bounds = CGRectMake(0, 0, 5, 5)
+        point6.layer.position = CGPoint(x: self.view.frame.width * 0.5, y: 210)
+        point6.layer.bounds = CGRect(x: 0, y: 0, width: 5, height: 5)
         point6.backgroundColor = UIColor.init(patternImage: UIImage(named: "point")!)
         self.view.addSubview(point6)
         
         
-        UIView.animateWithDuration(5.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
             point6.frame.origin.x = self.view.frame.width * 0.5
             point6.frame.origin.y = 20
-            point6.center = CGPointMake(self.view.frame.width - 100, 50)
+            point6.center = CGPoint(x: self.view.frame.width - 100, y: 50)
             
-            UIView.animateWithDuration(1.0, animations: {
-                point1.transform = CGAffineTransformTranslate(point6.transform, 0, 0)
+            UIView.animate(withDuration: 1.0, animations: {
+                point1.transform = point6.transform.translatedBy(x: 0, y: 0)
                 let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
                 scaleAnimation.fromValue = 0.7
                 scaleAnimation.toValue = 1.2
@@ -258,7 +258,7 @@ extension ViewController {
                 scaleAnimation.fillMode = kCAFillModeForwards
                 scaleAnimation.repeatCount = MAXFLOAT
                 scaleAnimation.duration = 0.8
-                point6.layer.addAnimation(scaleAnimation, forKey: "scaleAnimation")
+                point6.layer.add(scaleAnimation, forKey: "scaleAnimation")
             })
             
             
@@ -274,38 +274,38 @@ extension ViewController {
      */
     func cloudy() {
         // 创建云块
-        viewAnimation.layer.position = CGPointMake(100, -10)
-        viewAnimation.layer.bounds = CGRectMake(0, 0, 279, 145)
+        viewAnimation.layer.position = CGPoint(x: 100, y: -10)
+        viewAnimation.layer.bounds = CGRect(x: 0, y: 0, width: 279, height: 145)
         viewAnimation.backgroundColor = UIColor.init(patternImage: UIImage(named: "大云")!)
         self.view.addSubview(viewAnimation)
         
-        leftCloudy.layer.position = CGPointMake(150, 80)
-        leftCloudy.layer.bounds = CGRectMake(0, 0, 61, 33)
+        leftCloudy.layer.position = CGPoint(x: 150, y: 80)
+        leftCloudy.layer.bounds = CGRect(x: 0, y: 0, width: 61, height: 33)
         leftCloudy.backgroundColor = UIColor.init(patternImage: UIImage(named: "左侧云彩")!)
         self.view.addSubview(leftCloudy)
         
-        rightCloudy.layer.position = CGPointMake(300, 30)
-        rightCloudy.layer.bounds = CGRectMake(0, 0, 33, 19)
+        rightCloudy.layer.position = CGPoint(x: 300, y: 30)
+        rightCloudy.layer.bounds = CGRect(x: 0, y: 0, width: 33, height: 19)
         rightCloudy.backgroundColor = UIColor.init(patternImage: UIImage(named: "右侧云彩")!)
         self.view.addSubview(rightCloudy)
         
-        point.layer.position = CGPointMake(self.view.frame.width * 0.5, 100)
-        point.layer.bounds = CGRectMake(0, 0, 9, 9)
+        point.layer.position = CGPoint(x: self.view.frame.width * 0.5, y: 100)
+        point.layer.bounds = CGRect(x: 0, y: 0, width: 9, height: 9)
         point.backgroundColor = UIColor.init(patternImage: UIImage(named: "圆点")!)
         self.view.addSubview(point)
         
-        point1.layer.position = CGPointMake(self.view.frame.width * 0.5, 100)
-        point1.layer.bounds = CGRectMake(0, 0, 9, 9)
+        point1.layer.position = CGPoint(x: self.view.frame.width * 0.5, y: 100)
+        point1.layer.bounds = CGRect(x: 0, y: 0, width: 9, height: 9)
         point1.backgroundColor = UIColor.init(patternImage: UIImage(named: "圆点")!)
         self.view.addSubview(point1)
         
-        point2.layer.position = CGPointMake(self.view.frame.width * 0.5, 100)
-        point2.layer.bounds = CGRectMake(0, 0, 9, 9)
+        point2.layer.position = CGPoint(x: self.view.frame.width * 0.5, y: 100)
+        point2.layer.bounds = CGRect(x: 0, y: 0, width: 9, height: 9)
         point2.backgroundColor = UIColor.init(patternImage: UIImage(named: "圆点")!)
         self.view.addSubview(point2)
         
-        point3.layer.position = CGPointMake(self.view.frame.width * 0.5, 100)
-        point3.layer.bounds = CGRectMake(0, 0, 9, 9)
+        point3.layer.position = CGPoint(x: self.view.frame.width * 0.5, y: 100)
+        point3.layer.bounds = CGRect(x: 0, y: 0, width: 9, height: 9)
         point3.backgroundColor = UIColor.init(patternImage: UIImage(named: "圆点")!)
         self.view.addSubview(point3)
 
@@ -320,35 +320,35 @@ extension ViewController {
     //播放动画
     func playAnimation()
     {
-        UIView.animateWithDuration(5.0, delay: 0.0, options: [.Repeat, .Autoreverse, .CurveEaseOut],
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat, .autoreverse, .curveEaseOut],
                                    animations: {
                                     self.viewAnimation.frame.origin.x = 0
             },
                                    completion: nil)
         
         
-        UIView.animateWithDuration(3.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
+        UIView.animate(withDuration: 3.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
             self.leftCloudy.frame.origin.x = 0
-            self.leftCloudy.center = CGPointMake(220, 80);
-            self.leftCloudy.transform = CGAffineTransformRotate(CGAffineTransformScale(self.leftCloudy.transform, 1, 1), 0)
+            self.leftCloudy.center = CGPoint(x: 220, y: 80);
+            self.leftCloudy.transform = self.leftCloudy.transform.scaledBy(x: 1, y: 1).rotated(by: 0)
             self.leftCloudy.alpha = 0.0
             
             }, completion: nil)
         
-        UIView.animateWithDuration(3.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
+        UIView.animate(withDuration: 3.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
             self.rightCloudy.frame.origin.x = 300
-            self.rightCloudy.center = CGPointMake(220, 30)
-            self.rightCloudy.transform = CGAffineTransformRotate(CGAffineTransformScale(self.rightCloudy.transform, 1, 1), 0)
+            self.rightCloudy.center = CGPoint(x: 220, y: 30)
+            self.rightCloudy.transform = self.rightCloudy.transform.scaledBy(x: 1, y: 1).rotated(by: 0)
             self.rightCloudy.alpha = 0.0
             
         },completion: nil)
         
         
-        UIView.animateWithDuration(5.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
-            self.point.center = CGPointMake(10, 100)
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
+            self.point.center = CGPoint(x: 10, y: 100)
 
-            UIView.animateWithDuration(1.0, animations: { 
-                self.point.transform = CGAffineTransformTranslate(self.point.transform, 0, 0)
+            UIView.animate(withDuration: 1.0, animations: { 
+                self.point.transform = self.point.transform.translatedBy(x: 0, y: 0)
                 let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
                 scaleAnimation.fromValue = 1.0
                 scaleAnimation.toValue = 0.6
@@ -356,7 +356,7 @@ extension ViewController {
                 scaleAnimation.fillMode = kCAFillModeForwards
                 scaleAnimation.repeatCount = MAXFLOAT
                 scaleAnimation.duration = 0.8
-                self.point.layer.addAnimation(scaleAnimation, forKey: "scaleAnimation")
+                self.point.layer.add(scaleAnimation, forKey: "scaleAnimation")
             })
             
             
@@ -364,11 +364,11 @@ extension ViewController {
                 
         }
         
-        UIView.animateWithDuration(5.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
-            self.point1.center = CGPointMake(20, 200)
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
+            self.point1.center = CGPoint(x: 20, y: 200)
             
-            UIView.animateWithDuration(1.0, animations: {
-                self.point1.transform = CGAffineTransformTranslate(self.point1.transform, 0, 0)
+            UIView.animate(withDuration: 1.0, animations: {
+                self.point1.transform = self.point1.transform.translatedBy(x: 0, y: 0)
                 let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
                 scaleAnimation.fromValue = 0.6
                 scaleAnimation.toValue = 0.3
@@ -376,7 +376,7 @@ extension ViewController {
                 scaleAnimation.fillMode = kCAFillModeForwards
                 scaleAnimation.repeatCount = MAXFLOAT
                 scaleAnimation.duration = 0.8
-                self.point1.layer.addAnimation(scaleAnimation, forKey: "scaleAnimation")
+                self.point1.layer.add(scaleAnimation, forKey: "scaleAnimation")
             })
             
             
@@ -384,11 +384,11 @@ extension ViewController {
             
         }
         
-        UIView.animateWithDuration(5.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
-            self.point2.center = CGPointMake(self.view.frame.width - 15, 120)
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
+            self.point2.center = CGPoint(x: self.view.frame.width - 15, y: 120)
             
-            UIView.animateWithDuration(1.0, animations: {
-                self.point2.transform = CGAffineTransformTranslate(self.point2.transform, 0, 0)
+            UIView.animate(withDuration: 1.0, animations: {
+                self.point2.transform = self.point2.transform.translatedBy(x: 0, y: 0)
                 let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
                 scaleAnimation.fromValue = 1.0
                 scaleAnimation.toValue = 0.6
@@ -396,7 +396,7 @@ extension ViewController {
                 scaleAnimation.fillMode = kCAFillModeForwards
                 scaleAnimation.repeatCount = MAXFLOAT
                 scaleAnimation.duration = 0.8
-                self.point2.layer.addAnimation(scaleAnimation, forKey: "scaleAnimation")
+                self.point2.layer.add(scaleAnimation, forKey: "scaleAnimation")
             })
             
             
@@ -404,11 +404,11 @@ extension ViewController {
             
         }
         
-        UIView.animateWithDuration(5.0, delay: 0.0, options: [.Repeat, .CurveEaseOut], animations: {
-            self.point3.center = CGPointMake(self.view.frame.width - 20, 150)
+        UIView.animate(withDuration: 5.0, delay: 0.0, options: [.repeat, .curveEaseOut], animations: {
+            self.point3.center = CGPoint(x: self.view.frame.width - 20, y: 150)
             
-            UIView.animateWithDuration(1.0, animations: {
-                self.point3.transform = CGAffineTransformTranslate(self.point3.transform, 0, 0)
+            UIView.animate(withDuration: 1.0, animations: {
+                self.point3.transform = self.point3.transform.translatedBy(x: 0, y: 0)
                 let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
                 scaleAnimation.fromValue = 0.5
                 scaleAnimation.toValue = 0.3
@@ -416,7 +416,7 @@ extension ViewController {
                 scaleAnimation.fillMode = kCAFillModeForwards
                 scaleAnimation.repeatCount = MAXFLOAT
                 scaleAnimation.duration = 0.8
-                self.point3.layer.addAnimation(scaleAnimation, forKey: "scaleAnimation")
+                self.point3.layer.add(scaleAnimation, forKey: "scaleAnimation")
             })
             
             
@@ -437,8 +437,8 @@ extension ViewController {
      */
     func snow() {
         let pointEmitter = CAEmitterLayer()
-        pointEmitter.emitterPosition = CGPointMake(120, -120)
-                pointEmitter.emitterSize = CGSizeMake(self.view.frame.width, 0)
+        pointEmitter.emitterPosition = CGPoint(x: 120, y: -120)
+                pointEmitter.emitterSize = CGSize(width: self.view.frame.width, height: 0)
         pointEmitter.emitterMode = kCAEmitterLayerSurface
         pointEmitter.emitterShape = kCAEmitterLayerOldestLast
         
@@ -453,7 +453,7 @@ extension ViewController {
         snow1Cell.minificationFilterBias = 5.0
         snow1Cell.emissionRange = CGFloat(M_PI)
         snow1Cell.spinRange = CGFloat(M_PI)
-        snow1Cell.contents = UIImage(named: "snow1")!.CGImage
+        snow1Cell.contents = UIImage(named: "snow1")!.cgImage
         
         let snow2Cell = CAEmitterCell()
         snow2Cell.name = "point"
@@ -466,7 +466,7 @@ extension ViewController {
         snow2Cell.minificationFilterBias = 5.0
         snow2Cell.emissionRange = CGFloat(M_PI)
         snow2Cell.spinRange = CGFloat(M_PI)
-        snow2Cell.contents = UIImage(named: "snow2")!.CGImage
+        snow2Cell.contents = UIImage(named: "snow2")!.cgImage
         
         let snow3Cell = CAEmitterCell()
         snow3Cell.name = "point"
@@ -479,7 +479,7 @@ extension ViewController {
         snow3Cell.minificationFilterBias = 5.0
         snow3Cell.emissionRange = CGFloat(M_PI)
         snow3Cell.spinRange = CGFloat(M_PI)
-        snow3Cell.contents = UIImage(named: "snow3")!.CGImage
+        snow3Cell.contents = UIImage(named: "snow3")!.cgImage
         
         let snow4Cell = CAEmitterCell()
         snow4Cell.name = "point"
@@ -492,11 +492,11 @@ extension ViewController {
         snow4Cell.minificationFilterBias = 5.0
         snow4Cell.emissionRange = CGFloat(M_PI)
         snow4Cell.spinRange = CGFloat(M_PI)
-        snow4Cell.contents = UIImage(named: "snow4")!.CGImage
+        snow4Cell.contents = UIImage(named: "snow4")!.cgImage
         
         pointEmitter.emitterCells = [snow1Cell,snow2Cell,snow3Cell,snow4Cell]
         
-        self.view.layer.insertSublayer(pointEmitter, atIndex: 0)
+        self.view.layer.insertSublayer(pointEmitter, at: 0)
     }
     
     
@@ -507,8 +507,8 @@ extension ViewController {
     //rainy
     func rain() {
         let rainEmitter = CAEmitterLayer()
-        rainEmitter.emitterPosition = CGPointMake(self.view.frame.width, -100)
-        rainEmitter.emitterSize = CGSizeMake(10, 10)
+        rainEmitter.emitterPosition = CGPoint(x: self.view.frame.width, y: -100)
+        rainEmitter.emitterSize = CGSize(width: 10, height: 10)
         rainEmitter.emitterMode = kCAEmitterLayerSurface
         rainEmitter.emitterShape = kCAEmitterLayerOldestLast
         
@@ -523,7 +523,7 @@ extension ViewController {
         rain1Cell.yAcceleration = 100
         rain1Cell.alphaSpeed = 2
         rain1Cell.emissionLatitude = CGFloat(-3 * M_PI)
-        rain1Cell.contents = UIImage(named: "rain")!.CGImage
+        rain1Cell.contents = UIImage(named: "rain")!.cgImage
         
         let rain2Cell = CAEmitterCell()
         rain2Cell.name = "point"
@@ -535,7 +535,7 @@ extension ViewController {
         rain2Cell.yAcceleration = 100
         rain2Cell.alphaSpeed = 2
         rain2Cell.emissionLatitude = CGFloat(-3 * M_PI)
-        rain2Cell.contents = UIImage(named: "rain2")!.CGImage
+        rain2Cell.contents = UIImage(named: "rain2")!.cgImage
         
         
         let rain3Cell = CAEmitterCell()
@@ -549,7 +549,7 @@ extension ViewController {
         rain3Cell.yAcceleration = 100
         rain3Cell.alphaSpeed = 2
         rain3Cell.emissionLatitude = CGFloat(-3 * M_PI)
-        rain3Cell.contents = UIImage(named: "rain3")!.CGImage
+        rain3Cell.contents = UIImage(named: "rain3")!.cgImage
         
         
         let rain4Cell = CAEmitterCell()
@@ -562,7 +562,7 @@ extension ViewController {
         rain4Cell.yAcceleration = 100
         rain4Cell.alphaSpeed = 2
         rain4Cell.emissionLatitude = CGFloat(-3 * M_PI)
-        rain4Cell.contents = UIImage(named: "rain4")!.CGImage
+        rain4Cell.contents = UIImage(named: "rain4")!.cgImage
         
         
         let rain5Cell = CAEmitterCell()
@@ -575,8 +575,8 @@ extension ViewController {
         rain5Cell.yAcceleration = 100
         rain5Cell.alphaSpeed = 2
         rain5Cell.emissionLatitude = CGFloat(-3 * M_PI)
-        rain5Cell.contents = UIImage(named: "rain5")!.CGImage
+        rain5Cell.contents = UIImage(named: "rain5")!.cgImage
         rainEmitter.emitterCells = [rain1Cell,rain2Cell,rain3Cell,rain4Cell,rain5Cell]
-        self.view.layer.insertSublayer(rainEmitter, atIndex: 0)
+        self.view.layer.insertSublayer(rainEmitter, at: 0)
     }
 }
